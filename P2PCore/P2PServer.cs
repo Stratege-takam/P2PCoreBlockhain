@@ -13,7 +13,7 @@ namespace P2PCore
 
 		public void Start()
 		{
-			var defaultAddress = "192.168.1.1";
+			var defaultAddress = "192.168.1.42";
 			wss = new WebSocketServer($"ws://{defaultAddress}:{Program.Port}");
 			wss.AddWebSocketService<P2PServer>("/Blockchain");
 			wss.Start();

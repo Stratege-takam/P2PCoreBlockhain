@@ -47,12 +47,7 @@ namespace P2PCore
 						Console.WriteLine($"Current user is {name}");
 					}
 
-					Console.WriteLine("=========================");
-					Console.WriteLine("1. Connect to a server");
-					Console.WriteLine("2. Add a transaction");
-					Console.WriteLine("3. Display Blockchain");
-					Console.WriteLine("4. Exit");
-					Console.WriteLine("=========================");
+					showMenu();
 
 					int selection = 0;
 					while (selection != 4)
@@ -79,6 +74,10 @@ namespace P2PCore
 								Console.WriteLine("Blockchain");
 								Console.WriteLine(JsonConvert.SerializeObject(PhillyCoin, Formatting.Indented));
 								break;
+							case 4:
+								System.Console.Clear();
+								showMenu();
+								break;
 							default:
 								Quict = true;
 								break;
@@ -99,6 +98,17 @@ namespace P2PCore
 				}
 			}
 			
+		}
+
+		public  static void showMenu()
+		{
+			Console.WriteLine("=========================");
+			Console.WriteLine("1. Connect to a server");
+			Console.WriteLine("2. Add a transaction");
+			Console.WriteLine("3. Display Blockchain");
+			Console.WriteLine("4. Clear screen ");
+			Console.WriteLine("5. Exit");
+			Console.WriteLine("=========================");
 		}
 	}
 }
